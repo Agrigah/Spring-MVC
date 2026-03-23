@@ -1,12 +1,14 @@
 package net.agrigah.bdccensetspringmvc;
 import net.agrigah.bdccensetspringmvc.entities.Product;
 import net.agrigah.bdccensetspringmvc.repositories.ProductRepository;
+import org.apache.catalina.security.SecurityConfig;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class,})
 public class BdccEnsetSpringMvcApplication {
 
 	public static void main(String[] args) {
