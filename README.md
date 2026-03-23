@@ -13,6 +13,7 @@ Sécurisation des routes HTTP
 
 L’interface utilisateur est développée avec Thymeleaf et Bootstrap, permettant de créer une application dynamique, responsive et ergonomique.
 
+
 🛠️ Technologies Utilisées
 Backend
 Java 17+
@@ -35,6 +36,8 @@ Outils de développement
 Maven
 IntelliJ IDEA
 Git / GitHub
+
+
 🔐 Sécurité et Contrôle d’Accès
 
 L'application implémente un système complet de sécurité basé sur Spring Security.
@@ -68,6 +71,8 @@ Activée par défaut pour sécuriser les formulaires et requêtes sensibles.
 
 Gestion des exceptions
 Accès non autorisé → redirection vers une page personnalisée (403 / notAuthorized)
+
+
 📦 Gestion des Produits (CRUD)
 Create – Ajouter un produit
 Formulaire sécurisé
@@ -84,6 +89,8 @@ Confirmation JavaScript avant suppression
 Recherche de produits
 Recherche par nom
 Implémentée avec Spring Data JPA
+
+
 🎨 Interface Utilisateur (UI / UX)
 Système de Layout
 
@@ -129,6 +136,8 @@ Effets shadow
 
 Objectif : une interface claire, moderne et intuitive.
 
+
+
 ⚙️ Configuration Technique
 H2 Console (développement)
 Accessible pour les tests
@@ -137,6 +146,8 @@ Désactivation partielle CSRF
 Autorisation des frames
 
 Cela permet d’éviter les erreurs liées au clickjacking.
+
+
 
 🧪 Tests de l’Application
 
@@ -150,11 +161,15 @@ Username	Password	Role
 user1	1234	USER
 user2	1234	USER
 admin	1234	ADMIN
+
+
 ▶️ Lancement du projet
 Avec Maven
 mvn spring-boot:run
 Accès à l’application
 http://localhost:8094/login
+
+
 👩‍💻 Auteur
 
 Aya Agrigah
