@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/index}">Products</a>
+                    <a class="nav-link" th:href="@{/user/index}">Products</a>
                 </li>
                 <li class="nav-item" sec:authorize="hasRole('ADMIN')">
                     <a class="nav-link" th:href="@{/admin/formProducts}">New Product</a>
@@ -33,7 +33,7 @@
 
 <div class="container mt-4">
 
-    <form method="get" th:action="@{/index}" class="row g-2 mb-3">
+    <form method="get" th:action="@{/user/index}" class="row g-2 mb-3">
         <div class="col-auto">
             <input type="text" name="keyword" th:value="${keyword}" class="form-control" placeholder="Search">
         </div>
@@ -60,11 +60,11 @@
             <td th:text="${p.quantity}"></td>
             <td>
                 <a class="btn btn-warning btn-sm"
-                   th:href="@{/editProduct(id=${p.id})}"
+                   th:href="@{/admin/editProduct(id=${p.id})}"
                    sec:authorize="hasRole('ADMIN')">Edit</a>
 
                 <a class="btn btn-danger btn-sm"
-                   th:href="@{/delete(id=${p.id},page=${currentPage},keyword=${keyword})}"
+                   th:href="@{/admin/delete(id=${p.id},page=${currentPage},keyword=${keyword})}"
                    onclick="return confirm('Are you sure?')"
                    sec:authorize="hasRole('ADMIN')">Delete</a>
             </td>
