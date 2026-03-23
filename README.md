@@ -1,176 +1,71 @@
-📦 Activité Pratique N°2
+# 📦 Stock Management App  
 Spring MVC - Spring Data JPA & Spring Security
-📖 Description du Projet
 
-Ce projet consiste à développer une application web de gestion de stock de produits en utilisant Spring Boot et Spring MVC, avec un accent particulier sur la sécurisation de l’application via Spring Security.
+## 📖 Description
+Application web de gestion de stock développée avec **Spring Boot**.  
+Elle permet de gérer des produits (CRUD) avec un système de sécurité basé sur **Spring Security** (authentification, rôles, autorisations).
 
-L’objectif principal est d’illustrer les mécanismes fondamentaux de sécurité dans les applications web modernes, notamment :
+---
 
-Authentification des utilisateurs
-Gestion des rôles et autorisations (RBAC)
-Protection contre les attaques courantes
-Sécurisation des routes HTTP
+## 🚀 Fonctionnalités
 
-L’interface utilisateur est développée avec Thymeleaf et Bootstrap, permettant de créer une application dynamique, responsive et ergonomique.
+- Authentification sécurisée (Spring Security)
+- Gestion des rôles (USER / ADMIN)
+- CRUD des produits
+- Recherche par nom
+- Pagination des données
+- Interface responsive avec Bootstrap
+- Messages de notification (succès, modification, suppression)
 
+---
 
-🛠️ Technologies Utilisées
-Backend
-Java 17+
-Spring Boot
-Spring MVC
-Spring Data JPA
-Hibernate
-Spring Security
-Spring Validation
-Frontend
-Thymeleaf
-Thymeleaf Layout Dialect
-Thymeleaf Security Extras
-HTML5 / CSS3
-Bootstrap 5
-Bootstrap Icons
-Base de données
-H2 Database (base en mémoire)
-Outils de développement
-Maven
-IntelliJ IDEA
-Git / GitHub
+## 🔐 Sécurité
 
+- Authentification In-Memory
+- Mots de passe encodés avec BCrypt
+- Protection CSRF activée
+- Gestion des accès par rôles :
 
-🔐 Sécurité et Contrôle d’Accès
+| Route       | Accès              |
+|------------|-------------------|
+| /admin/**  | ADMIN uniquement  |
+| /user/**   | USER & ADMIN      |
+| /login     | Public            |
 
-L'application implémente un système complet de sécurité basé sur Spring Security.
+---
 
-Authentification
-Authentification In-Memory
-Encodage des mots de passe avec BCryptPasswordEncoder
-Gestion des rôles (RBAC)
-USER
+## 🛠️ Technologies
 
-Peut :
+**Backend**
+- Java 17+
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Hibernate
+- Spring Security
 
-Consulter la liste des produits
-Effectuer des recherches
-ADMIN
+**Frontend**
+- Thymeleaf
+- Bootstrap 5
 
-Peut :
+**Database**
+- H2 (in-memory)
 
-Consulter les produits
-Ajouter un produit
-Modifier un produit
-Supprimer un produit
-Sécurisation des routes
-Route	Accès
-/admin/**	ADMIN uniquement
-/user/**	USER & ADMIN
-/login	Public
-Protection CSRF
+---
 
-Activée par défaut pour sécuriser les formulaires et requêtes sensibles.
+## ▶️ Lancer le projet
 
-Gestion des exceptions
-Accès non autorisé → redirection vers une page personnalisée (403 / notAuthorized)
+```bash
+mvn spring-boot:run
 
+Accès :
+http://localhost:8094/login
 
-📦 Gestion des Produits (CRUD)
-Create – Ajouter un produit
-Formulaire sécurisé
-Validation côté serveur avec @Valid et BindingResult
-Read – Afficher les produits
-Tableau dynamique
-Pagination
-Interface responsive avec Bootstrap
-Update – Modifier un produit
-Formulaire pré-rempli
-Utilisation d’un champ caché pour l’ID
-Delete – Supprimer un produit
-Confirmation JavaScript avant suppression
-Recherche de produits
-Recherche par nom
-Implémentée avec Spring Data JPA
-
-
-🎨 Interface Utilisateur (UI / UX)
-Système de Layout
-
-Utilisation de Thymeleaf Layout Dialect pour :
-
-Un layout principal
-Des vues dynamiques réutilisables
-
-Composants partagés :
-
-Navbar
-Footer
-Styles globaux
-Barre de Navigation Dynamique
-
-Affiche :
-
-Utilisateur connecté
-Options selon le rôle
-Bouton logout
-
-Implémentation avec Thymeleaf Security Extras.
-
-Notifications (Flash Messages)
-
-Affichage de messages Bootstrap :
-
-Ajout réussi
-Modification réussie
-Suppression réussie
-
-Implémentation avec RedirectAttributes.
-
-Design
-
-Interface réalisée avec Bootstrap :
-
-Cards
-Badges
-Tables responsives
-table-hover
-Effets shadow
-
-Objectif : une interface claire, moderne et intuitive.
-
-
-
-⚙️ Configuration Technique
-H2 Console (développement)
-Accessible pour les tests
-Configuration spécifique :
-Désactivation partielle CSRF
-Autorisation des frames
-
-Cela permet d’éviter les erreurs liées au clickjacking.
-
-
-
-🧪 Tests de l’Application
-
-L’application permet de tester :
-
-L’authentification
-Les restrictions d’accès
-Les fonctionnalités CRUD selon les rôles
-Comptes de test
+👤 Comptes de test
 Username	Password	Role
 user1	1234	USER
 user2	1234	USER
 admin	1234	ADMIN
-
-
-▶️ Lancement du projet
-Avec Maven
-mvn spring-boot:run
-Accès à l’application
-http://localhost:8094/login
-
-
 👩‍💻 Auteur
 
 Aya Agrigah
-ENSET – Spring MVC Practical Work
